@@ -59,27 +59,23 @@ select {
 }
 
 /***************** My styling *************************/
-html {
-  margin: 0;
-  padding: 0;
-}
 body {
   display: grid;
   grid-template-rows: .3fr 3fr;
 }
 
 .header {
+  padding: 0 2vw 0 2vw;
   background-color: gray;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-
 .menu {
-  height: 100%;
-  background-color: red;
+  height: 50%;
   flex: .2;
+  justify-content: end;
   display: flex;
   gap: 8px;
 }
