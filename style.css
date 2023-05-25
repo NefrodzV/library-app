@@ -59,11 +59,10 @@ select {
   font: inherit;
 }
 
-/***************** MMY STYLE *************************/
+/***************** MY STYLE *************************/
 body {
   display: grid;
-  grid-template-rows: .3fr 3fr;
-  
+  grid-template-rows: max(10vh, 100px) 3fr;
 }
 .header, .menu, .wrapper {
   display: flex;
@@ -107,7 +106,7 @@ a:hover {
 }
 
 .container {
-  height: 100%;
+  height: auto;
   background-color: burlywood;
   background-size: cover;
   background-repeat: no-repeat;
@@ -136,14 +135,14 @@ a:hover {
 }
 
 .book-container {
-  margin: 1% 0 4% 0;
+  margin: 1% 0 0 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(1fr, 300px));
   gap: min(.5vw, 32px);
 
 }
 .book {
   box-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
-  height: max(800px);
+  height: max(800px, 25rem);
   background-color: white;
 }
