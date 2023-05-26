@@ -60,6 +60,8 @@ select {
 }
 
 /***************** MY STYLE *************************/
+
+
 body {
   position: relative;
   display: grid;
@@ -73,7 +75,6 @@ body {
   padding: 0 1.5vw 0 1.5vw;
 }
 .header {
-  position: relative;
   font-size: clamp(1.2rem, 1vw + 1rem, 3rem);
   align-items: center;
   justify-content: space-between;
@@ -108,7 +109,6 @@ a:hover {
 }
 
 .container {
-  height: auto;
   background-color: burlywood;
   background-size: cover;
   background-repeat: no-repeat;
@@ -137,6 +137,7 @@ a:hover {
 }
 
 .book-container {
+  position: relative;
   margin: 1% 0 0 0;
   padding-bottom: 3%;
   display: grid;
@@ -164,35 +165,37 @@ a:hover {
   text-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
 }
 
-.book-form {
-  padding: 0;
 
+.book-form {
+  background-color: gray;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
   display: grid;
   grid-template-rows: min(5vh, 50px) auto;
-  background-color: gray;
-  margin-left: -12%;
-  height: min(50vh, 800px);
-  width: min(50vh, 800px);
-  position: absolute;
-  top:25%;
-  left:50%;
+  transform: translate(-50%, -50%);
 }
 
 .close {
-  display: flex;
-  align-items: center;
   margin: 3px 3px 0 0;
   border-radius: 5px;
-  text-align: center;
   background-color: burlywood;
   font-size: 2rem;
-  width: 7%;
   justify-self: end;
 }
 
+.close > svg {
+  height: 100%;
+  width: 100%;
+}
+
 fieldset {
+  margin:0 auto;
   border: none;
   display: grid;
+  gap: 8px;
   grid-template-columns: min-content 1fr;
   grid-template-rows:  min-content repeat(3, 50px) min-content;
   align-items: center;
