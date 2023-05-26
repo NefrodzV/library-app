@@ -64,7 +64,7 @@ body {
   display: grid;
   grid-template-rows: max(10vh, 100px) auto;
 }
-.header, .menu, .wrapper {
+.header, .menu, .wrapper, .book {
   display: flex;
 }
 
@@ -72,6 +72,7 @@ body {
   padding: 0 1.5vw 0 1.5vw;
 }
 .header {
+  position: relative;
   font-size: clamp(1.2rem, 1vw + 1rem, 3rem);
   align-items: center;
   justify-content: space-between;
@@ -143,12 +144,20 @@ a:hover {
 
 }
 .book {
-  display: flex;
+  font-size: 2rem;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(to right, rgb(60, 13, 13) 20px, rgb(124, 66, 66) 30px, rgb(60, 13, 13)35px, rgb(124, 66, 66) 45px, rgb(100, 52, 52))  ;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
+  background: linear-gradient(to right, rgb(60, 13, 13) 20px, rgb(124, 66, 66) 30px, rgb(60, 13, 13)35px, rgb(124, 66, 66) 45px, rgb(100, 52, 52));
   height: max(40vh, 500px);
   border-radius: 6px;
+  gap: min(1vw, 16px);
+}
+
+.shadow {
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
+}
+
+.text-shadow {
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
 }
