@@ -62,7 +62,7 @@ select {
 /***************** MY STYLE *************************/
 body {
   display: grid;
-  grid-template-rows: max(10vh, 100px) 3fr;
+  grid-template-rows: max(10vh, 100px) auto;
 }
 .header, .menu, .wrapper {
   display: flex;
@@ -136,13 +136,19 @@ a:hover {
 
 .book-container {
   margin: 1% 0 0 0;
+  padding-bottom: 3%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 20vw, 600px), 1fr));
-  gap: min(.5vw, 32px);
+  gap: min(1vw, 16px);
 
 }
 .book {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(to right, rgb(60, 13, 13) 20px, rgb(124, 66, 66) 30px, rgb(60, 13, 13)35px, rgb(124, 66, 66) 45px, rgb(100, 52, 52))  ;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
-  height: max(800px, 25rem);
-  background-color: white;
+  height: max(40vh, 500px);
+  border-radius: 6px;
 }
