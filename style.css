@@ -61,6 +61,7 @@ select {
 
 /***************** MY STYLE *************************/
 body {
+  position: relative;
   display: grid;
   grid-template-rows: max(10vh, 100px) auto;
 }
@@ -152,6 +153,7 @@ a:hover {
   height: max(40vh, 500px);
   border-radius: 6px;
   gap: min(1vw, 16px);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, .7);
 }
 
 .shadow {
@@ -160,4 +162,47 @@ a:hover {
 
 .text-shadow {
   text-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
+}
+
+.book-form {
+  padding: 0;
+
+  display: grid;
+  grid-template-rows: min(5vh, 50px) auto;
+  background-color: gray;
+  margin-left: -12%;
+  height: min(50vh, 800px);
+  width: min(50vh, 800px);
+  position: absolute;
+  top:25%;
+  left:50%;
+}
+
+.close {
+  display: flex;
+  align-items: center;
+  margin: 3px 3px 0 0;
+  border-radius: 5px;
+  text-align: center;
+  background-color: burlywood;
+  font-size: 2rem;
+  width: 7%;
+  justify-self: end;
+}
+
+fieldset {
+  border: none;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows:  min-content repeat(3, 50px) min-content;
+  align-items: center;
+}
+
+fieldset > button {
+  grid-column: 1/3;
+  justify-self: end;
+}
+
+fieldset > button:first-child() {
+  align-self: start;
 }
