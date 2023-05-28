@@ -60,8 +60,6 @@ select {
 }
 
 /***************** MY STYLE *************************/
-
-
 body {
   position: relative;
   display: grid;
@@ -165,7 +163,6 @@ a:hover {
   text-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
 }
 
-
 .book-form {
   background-color: gray;
   position: fixed;
@@ -179,6 +176,8 @@ a:hover {
 }
 
 .close {
+  display: flex;
+  justify-content: center;
   margin: 3px 3px 0 0;
   border-radius: 5px;
   background-color: burlywood;
