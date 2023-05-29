@@ -7,8 +7,8 @@
     <title>Library App</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body scroll="no">
-    
+<body>
+    <script src="javascript.js" defer></script>
     <div class="header shadow text-shadow">
         <h1>Library</h1> 
         <div class="menu">
@@ -21,10 +21,10 @@
     <div class="container">
         <div class="wrapper">
             <h2 class="books-title text-shadow">Books</h3>
-            <button class="add shadow">Add</button>
+            <button class="add shadow" id="add">Add</button>
         </div>
         <div class="book-container">
-            <div class="book">
+            <!-- <div class="book">
                     <p class="text-shadow">Book Title</p>
                     <p class="text-shadow">Author</p>
                     <p class="text-shadow">Total book pages</p>
@@ -32,118 +32,10 @@
                         <button class="read-status shadow">READ</button>
                         <button class="delete shadow">Delete</button>
                     </div>
-            </div>
-
-            <div class="book">
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Total book pages</p>
-                <button>READ</button>
-            </div>
-
-            <div class="book">
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Total book pages</p>
-                <button>READ</button>
-            </div>
-
-            <div class="book">
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Total book pages</p>
-                <button>READ</button>
-            </div>
-
-            <div class="book">
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Total book pages</p>
-                <button>READ</button>
-            </div>
-
-            <div class="book">
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Total book pages</p>
-                <button>READ</button>
-            </div>
-
-            <div class="book">
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Total book pages</p>
-                <button>READ</button>
-            </div>
-
-            <div class="book">
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Total book pages</p>
-                <button>READ</button>
-            </div>
-
-            <div class="book">
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Total book pages</p>
-                <button>READ</button>
-            </div>
-
-            <div class="book">
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Total book pages</p>
-                <button>READ</button>
-            </div>
-
-            <div class="book">
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Total book pages</p>
-                <button>READ</button>
-            </div>
-
-            <div class="book">
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Total book pages</p>
-                <button>READ</button>
-            </div>
-
-            <div class="book">
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Total book pages</p>
-                <button>READ</button>
-            </div>
-            <div class="book">
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Total book pages</p>
-                <button>READ</button>
-            </div>
-            <div class="book">
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Total book pages</p>
-                <button class="read-status">READ</button>
-            </div>
-            <div class="book">
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Total book pages</p>
-                <button>READ</button>
-            </div>
-            <div class="book">
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Total book pages</p>
-                <button>READ</button>
-            </div>            
+            </div> -->
         </div>
     </div>
-    <form style="display:none" class="book-form shadow">
+    <form id="book-form" class="book-form shadow">
         <button  class="close" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
         </button>
@@ -155,6 +47,6 @@
             <button type="button">SUBMIT</button>
         </fieldset>
     </form>
-    <div class="layer" style="display: none;" ></div>
+    <div class="layer"></div>
 </body>
 </html>

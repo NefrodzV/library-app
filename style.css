@@ -195,6 +195,7 @@ a:hover {
 
 /** Form **/
 .book-form {
+  display: none;
   z-index: 1;
   font-size: medium;
   border-radius: 5px;
@@ -204,10 +205,13 @@ a:hover {
   left: 50%;
   width: 300px;
   height: 300px;
-  display: grid;
   row-gap: 8px;
   grid-template-rows: min(5vh, 35px) auto;
   transform: translate(-50%, -50%);
+}
+
+.book-form[visible] {
+  display: grid;
 }
 
 .close {
@@ -267,6 +271,7 @@ fieldset > button:first-child() {
 }
 
 .layer {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -275,3 +280,6 @@ fieldset > button:first-child() {
   background-color: rgba(0, 0, 0, .7);
 }
 
+.layer[visible] {
+  display: block;
+}
