@@ -73,6 +73,7 @@ body {
   padding: 0 1.5vw 0 1.5vw;
 }
 .header {
+  position: relative;
   font-size: clamp(1.2rem, 1vw + 1rem, 3rem);
   align-items: center;
   justify-content: space-between;
@@ -122,7 +123,7 @@ a:hover {
   font-size: clamp(2rem, 1vw + 1rem, 3rem);
 }
 
-.button {
+.add{
   width: clamp(4rem, 3vw + 6rem, 10vw);
   background-color: gray;
   font-size: clamp(1rem, 1vw + 1rem , 2.5rem);
@@ -130,19 +131,19 @@ a:hover {
   border-radius: 5px;
 }
 
-.button:hover {
+.add:hover {
   background-color:  rgba(128,128,128, .7);
 }
 
 .book-container {
-  position: relative;
   margin: 1% 0 0 0;
   padding-bottom: 3%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 20vw, 600px), 1fr));
   gap: min(1vw, 16px);
-
 }
+
+/** Book **/
 .book {
   font-size: 2rem;
   justify-content: center;
@@ -155,6 +156,35 @@ a:hover {
   box-shadow: 3px 3px 6px rgba(0, 0, 0, .7);
 }
 
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.button-wrapper > button {
+  border-radius: 10px;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.read-status {
+  background-color: lightgreen;
+}
+
+.reading-status {
+  background-color: lightsalmon;
+}
+
+.not-read-status {
+  background-color: lightcoral;
+}
+
+.delete {
+  background-color: hsl(348, 83%, 60%);
+}
+
+
 .shadow {
   box-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
 }
@@ -163,6 +193,7 @@ a:hover {
   text-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
 }
 
+/** Form **/
 .book-form {
   z-index: 1;
   font-size: medium;
@@ -243,3 +274,4 @@ fieldset > button:first-child() {
   height: 100%;  
   background-color: rgba(0, 0, 0, .7);
 }
+
