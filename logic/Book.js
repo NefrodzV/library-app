@@ -18,9 +18,9 @@ Book.prototype.getTitle = function() {
     return this.title;
 }
 Book.prototype.getAuthor = function() {
-    return this.author
+    return this.author;
 }
 Book.prototype.getPages = function() {
-    return `p. ${this.pages}`;
+    return `${this.pages} pages`;
 }
 

@@ -52,10 +52,8 @@ BookElementCreator.prototype.create = function(document ,book) {
     buttonWrapper.append(deleteButton);
 
     this.updateElement(titlePara, authorPara, pagesPara, statusButton, deleteButton, book);
-    const bookContainer = document.querySelector(".book-container");
-    bookContainer.append(div);
-    console.log('Book Item created');
-    this.elements.push(div);
     
-    return div;
+    // Set the div element to array
+    this.elements.push(div);
+
 }

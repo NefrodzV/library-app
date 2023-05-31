@@ -277,8 +277,6 @@ legend {
   text-transform: uppercase;
 }
 
-
-
 fieldset > button {
   grid-column: 1/3;
   justify-self: end;
