@@ -4,7 +4,6 @@ export class Library {
     }
 
     addBook(book) {
-        console.log(this.has(book.title));
         this.books.push(book);
     }
 
