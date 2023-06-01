@@ -1,9 +1,14 @@
+import { BookElement } from "./BookElement.js";
+
 export class BookElementCreator {
     
-    constructor() {
-        
+    constructor(document) {
+        this.document = document;
+        this.container = document.querySelector('.book-container');
     }
-    
+    static deleteBookElement(div) {
+        div.remove();
+    }
 }
 BookElementCreator.prototype.elements = [];
 BookElementCreator.prototype.updateElement = function(
@@ -18,10 +23,10 @@ BookElementCreator.prototype.updateElement = function(
      pagesPara.textContent = book.getPages();
      statusButton.textContent = book.status.READING;
     }
-BookElementCreator.prototype.create = function(document ,book) {
+BookElementCreator.prototype.create = function(book) {
     const div = document.createElement('div');
     div.classList.add('book');
-
+    div.setAttribute("id", book.title);
     const titlePara = document.createElement('p');
     titlePara.classList.add('shadow-text');
     titlePara.setAttribute('id','para-title');
@@ -43,6 +48,10 @@ BookElementCreator.prototype.create = function(document ,book) {
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('delete');
     deleteButton.textContent = "DELETE";
+    deleteButton.addEventListener('click',(e) => {
+        this.document
+        
+    })
 
     div.append(titlePara);
     div.append(authorPara);
@@ -51,9 +60,9 @@ BookElementCreator.prototype.create = function(document ,book) {
     buttonWrapper.append(statusButton);
     buttonWrapper.append(deleteButton);
 
-    this.updateElement(titlePara, authorPara, pagesPara, statusButton, deleteButton, book);
-    
-    // Set the div element to array
-    this.elements.push(div);
-
+    let bookElement = new BookElement(book.title, div, titlePara, authorPara, pagesPara, statusButton, deleteButton);
+    bookElement.update(book);
+    this.container.append(div);
+    this.elements.push(bookElement);
 }
+
