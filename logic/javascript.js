@@ -21,13 +21,10 @@ closeButton.addEventListener("click", () => {
     changeFormVisibility(); 
 })
 // Enter book logic
-
 const library = new Library();
-const bookElementCreator = new BookElementCreator();
+const bookElementCreator = new BookElementCreator(document);
 
 const submit = document.querySelector('#submit');
-// submit.addEventListener("click", ()=> {getBookInformation();})
-
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -39,21 +36,25 @@ form.addEventListener("submit", (e) => {
 function startFlow(data) {
     let book = new Book(data.title, data.author, data.pages);
 
-    library.addBook(book);
-    // createBookCards();
+    if (library.has(book.title) === false) {
+        library.addBook(book);
+        console.log("book doesnt exist");
+        bookElementCreator.create(book);
+    }
 }
 
-function createBookCards() {
-    library.books.forEach(book => {
-        bookElementCreator.create(document ,book);
-    });
-    displayBookCards();
-}
+// Adding event for delete button in book
 
-function displayBookCards() {
-    bookElementCreator.elements.forEach(element => {
-        bookContainer.append(element);
-    });
-}
+// function createBookCards(book) {
+//     bookElementCreator.create(book);
+//     displayBookCards();
+// }
+
+// function displayBookCards() {
+    
+// //     bookElementCreator.elements.forEach(element => {
+// //         bookContainer.append(element);
+// //     });
+// // }
 
 
