@@ -18,4 +18,10 @@ export class Library {
     has(title) {
         return this.books.some((book) => book.title === title);
     }
+
+    changeBookStatus(title) {
+        let book = this.books.find(book => {return book.title === title});
+        book.changeStatus();
+        return book.getStatus()
+    }
 }

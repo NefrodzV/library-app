@@ -6,6 +6,9 @@ export class BookElement {
         this.author = author;
         this.pages = pages;
         this.status = statusButton;
+        this.status.addEventListener('click', (e) => {
+            e.target.textContent = library.changeBookStatus(title.textContent);
+        })
 
         this.delete = deleteButton;
         this.delete.addEventListener('click', (e)=> {
@@ -18,6 +21,6 @@ export class BookElement {
      this.title.textContent = book.getTitle();
      this.author.textContent = book.getAuthor();
      this.pages.textContent = book.getPages();
-     this.status.textContent = book.status.READING;
+     this.status.textContent = book.status;
     }
 }

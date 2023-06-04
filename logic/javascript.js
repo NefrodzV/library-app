@@ -33,12 +33,15 @@ form.addEventListener("submit", (e) => {
     startFlow(data);
 })
 
+let bookExample = new Book("Harry Potter", "Jk. Rowling", "800")
+library.addBook(bookExample);
+bookElementCreator.create(bookExample);
+
 function startFlow(data) {
     let book = new Book(data.title, data.author, data.pages);
 
     if (library.has(book.title) === false) {
         library.addBook(book);
-        console.log("book doesnt exist");
         bookElementCreator.create(book);
     }
 }
