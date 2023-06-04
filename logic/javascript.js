@@ -7,24 +7,25 @@ const form = document.querySelector('#book-form');
 const layer = document.querySelector(".layer");
 const closeButton = document.querySelector(".close");
 const bookContainer = document.querySelector(".book-container");
+const errorMessage = document.querySelector('.error-message');
+errorMessage.classList.add("text-shadow");
 
-function changeFormVisibility() {
-    form.toggleAttribute("visible");
-    layer.toggleAttribute("visible");    
+function changeVisibility(element) {
+    element.toggleAttribute("visible");
 }
 
 addBook.addEventListener("click", () => {
-   changeFormVisibility();
+   changeVisibility(form);
+   changeVisibility(layer);
 })
 
 closeButton.addEventListener("click", () => {
-    changeFormVisibility(); 
+    changeVisibility(form);
+    changeVisibility(layer); 
 })
 // Enter book logic
 const library = new Library();
 const bookElementCreator = new BookElementCreator(document, library);
-
-const submit = document.querySelector('#submit');
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -37,12 +38,20 @@ let bookExample = new Book("Harry Potter", "Jk. Rowling", "800")
 library.addBook(bookExample);
 bookElementCreator.create(bookExample);
 
-function startFlow(data) {
+function startFlow(data) { 
+    // If this book is registered already show message and return
+    if(library.has(data.title)) {
+        changeVisibility(errorMessage);
+        return;
+    }
     let book = new Book(data.title, data.author, data.pages);
-
-    if (library.has(book.title) === false) {
-        library.addBook(book);
-        bookElementCreator.create(book);
+    library.addBook(book);
+    bookElementCreator.create(book);
+    changeVisibility(form);
+    changeVisibility(layer);
+    form.reset();
+    if(errorMessage.hasAttribute('visible')) {
+        changeVisibility(errorMessage);
     }
 }
 

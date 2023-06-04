@@ -145,13 +145,14 @@ a:hover {
   margin: 1% 0 0 0;
   padding-bottom: 3%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 20vw, 600px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(clamp(300px, 20vw, 600px), 1fr));
   gap: min(1vw, 16px);
 }
 
 /** Book **/
 .book {
-  font-size: 2rem;
+  color: white;
+  /* font-size: clamp(2rem, 1vw + 2rem, 2rem); */
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -161,8 +162,18 @@ a:hover {
   gap: min(1vw, 16px);
   box-shadow: 3px 3px 6px rgba(0, 0, 0, .7);
 }
+.title-para {
+  font-size: 2rem;
+}
+.author-para {
+  font-size: 1.8rem;
+}
 
+.pages-para {
+  font-size: 1.5rem;
+}
 .button-wrapper {
+  width: 180px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -266,15 +277,24 @@ fieldset {
   margin:0 auto;
   border: none;
   display: flex;
-  gap: 16px;
+  gap: 8px;
   flex-direction: column;
-justify-content: space-evenly;
+justify-content: flex-start;
 }
 
 legend {
   font-weight: bolder;
   font-size: large;
   text-transform: uppercase;
+}
+
+.error-message{
+  display: none;
+  align-self: flex-end;
+}
+
+.error-message[visible] {
+  display: block;
 }
 
 fieldset > button {
@@ -287,6 +307,10 @@ fieldset > button {
 
 fieldset > button:first-child() {
   align-self: start;
+}
+
+#submit {
+  justify-content: flex-end;
 }
 
 .layer {
