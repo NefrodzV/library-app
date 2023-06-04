@@ -22,6 +22,6 @@ export class Library {
     changeBookStatus(title) {
         let book = this.books.find(book => {return book.title === title});
         book.changeStatus();
-        return book.getStatus()
+        return book.getStatus();
     }
 }

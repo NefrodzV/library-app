@@ -13,15 +13,15 @@ BookElementCreator.prototype.create = function(book) {
     div.classList.add('book');
     const titlePara = document.createElement('p');
     titlePara.classList.add('shadow-text');
-    titlePara.setAttribute('id','para-title');
+    titlePara.classList.add('title-para');
 
     const authorPara = document.createElement('p');
     authorPara.classList.add('shadow-text');
-    authorPara.setAttribute('id','para-author');
+    authorPara.classList.add('author-para');
 
     const pagesPara = document.createElement('p');
     pagesPara.classList.add('shadow-text');
-    pagesPara.setAttribute('id','para-pages');
+    pagesPara.classList.add('pages-para');
     
     const buttonWrapper = document.createElement('div');
     buttonWrapper.classList.add('button-wrapper')
