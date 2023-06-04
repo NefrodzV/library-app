@@ -27,7 +27,6 @@ BookElementCreator.prototype.create = function(book) {
     buttonWrapper.classList.add('button-wrapper')
 
     const statusButton = document.createElement('button');
-    statusButton.classList.add('read-status');
 
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('delete');

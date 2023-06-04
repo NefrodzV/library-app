@@ -1,27 +1,23 @@
+import { BookState } from "./BookState.js";
 export class Book {
     
     constructor(title, author, pages) {
         this.title = title;
         this.author = author;
         this.pages = pages;
-        this.BOOK_STATE = {
-            READ: "READ",
-            READING: "READING",
-            NOT_READ: "NOT READ"
-        }
-        this.status = this.BOOK_STATE.NOT_READ;
+        this.status = BookState.NOT_READ;
     }
     changeStatus = () => {
         console.log("Prior status:" + this.status);
         switch(this.status) {
-            case this.BOOK_STATE.READ:
-                this.status = this.BOOK_STATE.READING;
+            case BookState.READ:
+                this.status = BookState.NOT_READ;
                 break;
-            case this.BOOK_STATE.READING:
-                this.status = this.BOOK_STATE.NOT_READ;
+            case BookState.READING:
+                this.status = BookState.READ;
                 break;
-            case this.BOOK_STATE.NOT_READ:
-                this.status = this.BOOK_STATE.READ;
+            case BookState.NOT_READ:
+                this.status = BookState.READING;
                 break;
         }
         console.log("After switch statement status:" + this.status);

@@ -3,7 +3,7 @@
   --secondary: burlywood;
   --border-clr: --secondary;
   --valid: lightgreen;
-  --invalid: red;
+  --invalid: hsl(348, 83%, 60%);
   --focus: rgb(105, 95, 180);
 }
 /*************** R E S E T **********************/
@@ -190,14 +190,20 @@ a:hover {
 }
 
 .reading-status {
-  background-color: lightsalmon;
+  background-color: hsl(60, 100%, 70%);
 }
 
 .not-read-status {
-  background-color: lightcoral;
+  color: white;
+  background-color: var(--invalid);
+}
+
+.read-status {
+  background-color: hsl(120, 73%, 70%);
 }
 
 .delete {
+  color: white;
   background-color: hsl(348, 83%, 60%);
 }
 
