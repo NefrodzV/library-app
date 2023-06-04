@@ -22,7 +22,7 @@ closeButton.addEventListener("click", () => {
 })
 // Enter book logic
 const library = new Library();
-const bookElementCreator = new BookElementCreator(document);
+const bookElementCreator = new BookElementCreator(document, library);
 
 const submit = document.querySelector('#submit');
 
@@ -43,18 +43,6 @@ function startFlow(data) {
     }
 }
 
-// Adding event for delete button in book
 
-// function createBookCards(book) {
-//     bookElementCreator.create(book);
-//     displayBookCards();
-// }
-
-// function displayBookCards() {
-    
-// //     bookElementCreator.elements.forEach(element => {
-// //         bookContainer.append(element);
-// //     });
-// // }
 
 
