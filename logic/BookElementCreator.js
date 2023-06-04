@@ -1,32 +1,16 @@
 import { BookElement } from "./BookElement.js";
 
 export class BookElementCreator {
-    
-    constructor(document) {
+    constructor(document, library) {
         this.document = document;
+        this.library = library;
         this.container = document.querySelector('.book-container');
     }
-    static deleteBookElement(div) {
-        div.remove();
-    }
 }
-BookElementCreator.prototype.elements = [];
-BookElementCreator.prototype.updateElement = function(
-    titlePara,
-    authorPara,
-    pagesPara,
-    statusButton,
-    deleteButton,
-    book) {
-     titlePara.textContent = book.getTitle();
-     authorPara.textContent = book.getAuthor();
-     pagesPara.textContent = book.getPages();
-     statusButton.textContent = book.status.READING;
-    }
+
 BookElementCreator.prototype.create = function(book) {
     const div = document.createElement('div');
     div.classList.add('book');
-    div.setAttribute("id", book.title);
     const titlePara = document.createElement('p');
     titlePara.classList.add('shadow-text');
     titlePara.setAttribute('id','para-title');
@@ -48,11 +32,8 @@ BookElementCreator.prototype.create = function(book) {
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('delete');
     deleteButton.textContent = "DELETE";
-    deleteButton.addEventListener('click',(e) => {
-        this.document
-        
-    })
-
+    
+    // Appending created elements to the parent
     div.append(titlePara);
     div.append(authorPara);
     div.append(pagesPara);
@@ -60,9 +41,9 @@ BookElementCreator.prototype.create = function(book) {
     buttonWrapper.append(statusButton);
     buttonWrapper.append(deleteButton);
 
-    let bookElement = new BookElement(book.title, div, titlePara, authorPara, pagesPara, statusButton, deleteButton);
+    // Create the book element object
+    let bookElement = new BookElement(this.library, div, titlePara, authorPara, pagesPara, statusButton, deleteButton);
     bookElement.update(book);
     this.container.append(div);
-    this.elements.push(bookElement);
 }
 
