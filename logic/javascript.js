@@ -1,4 +1,4 @@
-import { Library } from './Library';
+import { Library } from './Library.js';
 import { Book } from './Book.js';
 import { BookElementCreator } from './BookElementCreator.js';
 
