@@ -1,6 +1,6 @@
-import { Library } from './Library.js';
-import { Book } from '/logic/Book.js';
-import { BookElementCreator } from '/logic/BookElementCreator.js';
+import { Library } from './Library';
+import { Book } from './Book.js';
+import { BookElementCreator } from './BookElementCreator.js';
 
 const addBook = document.querySelector('#add');
 const form = document.querySelector('#book-form');
